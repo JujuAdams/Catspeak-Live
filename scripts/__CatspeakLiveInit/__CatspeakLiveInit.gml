@@ -2,7 +2,7 @@
 #macro __CATSPEAK_LIVE_DATE     "2023-06-17"
 
 __CatspeakLiveTrace("Welcome to Catspeak Live by Juju Adams! This is version ", __CATSPEAK_LIVE_VERSION, ", ", __CATSPEAK_LIVE_DATE);
-__CatspeakLiveTrace("Catspeak Live is built upon Catspeak by @katsaii  https://github.com/katsaii/catspeak-lang");
+__CatspeakLiveTrace("Catspeak Live wraps around Catspeak by @katsaii   https://github.com/katsaii/catspeak-lang");
 
 function __CatspeakLiveInit(_forceScan)
 {
