@@ -1,6 +1,6 @@
 //File extension to use for Catspeak source files
 //These files should be placed in your "datafiles" directory on disk
-#macro CATSPEAK_LIVE_SOURCE_EXTENSION  "catscr"
+#macro CATSPEAK_LIVE_SOURCE_EXTENSION  "cats"
 
 //Whether to ignore certain errors that might get in the way of speedy development
 //Set to <false> to track down simple human error, set to <true> to give yourself some leeway!
