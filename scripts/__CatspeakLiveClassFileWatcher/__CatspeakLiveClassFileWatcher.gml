@@ -7,8 +7,9 @@ function __CatspeakLiveClassFileWatcher(_filename) constructor
     __hash    = undefined;
     __changed = true;
     
-    __compiled = false;
-    __function = undefined;
+    __compiled       = false;
+    __function       = undefined;
+    __compileSuccess = false;
     
     static __Check = function()
     {
@@ -21,7 +22,6 @@ function __CatspeakLiveClassFileWatcher(_filename) constructor
             
             __changed  = true;
             __compiled = false;
-            __function = undefined;
             
             __Compile();
         }
@@ -41,6 +41,7 @@ function __CatspeakLiveClassFileWatcher(_filename) constructor
     static __Compile = function()
     {
         if (__compiled) return;
+        __compiled = true;
         
         __CatspeakLiveTrace("Compiling \"", __filename, "\"");
         
@@ -58,7 +59,7 @@ function __CatspeakLiveClassFileWatcher(_filename) constructor
             
             __CatspeakLiveTrace("Compiled \"", __filename, "\" successfully (took ", (get_timer() - _timer)/1000, "ms)");
             
-            __compiled = true;
+            __compileSuccess = true;
         }
         catch(_error)
         {
@@ -68,14 +69,36 @@ function __CatspeakLiveClassFileWatcher(_filename) constructor
             __CatspeakLiveTrace(_error.stacktrace);
             __CatspeakLiveTrace("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
             
-            __compiled = false;
-            __function = undefined;
+            __compileSuccess = false;
         }
+        
+        //Fallback on an empty function
+        if (__function == undefined) __function = function() {};
     }
     
-    static __Execute = function()
+    static __Execute = function(_safe = CATSPEAK_LIVE_SAFE_EXECUTION)
     {
         __Compile();
-        return __function();
+        
+        try
+        {
+            return __function();
+        }
+        catch(_error)
+        {
+            __CatspeakLiveTrace("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            __CatspeakLiveTrace("Error encountered whilst executing \"", __filename, "\"");
+            __CatspeakLiveTrace(_error.message);
+            __CatspeakLiveTrace(_error.stacktrace);
+            __CatspeakLiveTrace("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            
+            //Invalidate the compile
+            __compileSuccess = false;
+            
+            //Fallback on an empty function
+            __function = function() {};
+        }
+        
+        return undefined;
     }
 }

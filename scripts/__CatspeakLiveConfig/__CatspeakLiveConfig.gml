@@ -9,3 +9,9 @@
 //Whether to automatically scan for changes when running from the IDE
 //Set this macro to <false> to test behaviour in production (and also for a speed boost)
 #macro CATSPEAK_LIVE_AUTO_UPDATE_WHEN_RUNNING_FROM_IDE  true
+
+//Setting this to <true> will wrap every CatspeakLiveExecute() inside a try...catch block
+//internally. This means that any errors encountered whilst running Catspeak scripts will be
+//caught and reported in the output log instead of throwing an exception and crashing the
+//entire game
+#macro CATSPEAK_LIVE_SAFE_EXECUTION  false
