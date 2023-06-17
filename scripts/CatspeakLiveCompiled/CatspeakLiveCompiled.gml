@@ -1,14 +1,18 @@
+/// Returns if a Catspeak source file was compiled successfully
+/// This function won't throw an error if the source file doesn't exist
+/// 
 /// @param sourceName
 
 function CatspeakLiveCompiled(_name)
 {
     static __global = __CatspeakLiveGlobal();
     
-    if (not CatspeakLiveExists(_name))
+    if (__global.__environment == undefined)
     {
-        if (not CATSPEAK_LIVE_QUIET_ERRORS) __CatspeakLiveError("File \"", _name, "\" not found");
-        return false;
+        __CatspeakLiveError("Must call CatspeakLiveSetEnvironment() first");
     }
+    
+    if (not CatspeakLiveExists(_name)) return false;
     
     return __global.__fileWatcherStruct[$ __CatspeakLiveGetPath(_name)].__compiled;
 }

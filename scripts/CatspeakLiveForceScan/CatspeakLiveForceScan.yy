@@ -1,11 +1,11 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "__CatspeakLiveInit",
+  "name": "CatspeakLiveForceScan",
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "(System)",
-    "path": "folders/Catspeak Live/(System).yy",
+    "name": "Catspeak Live",
+    "path": "folders/Catspeak Live.yy",
   },
 }

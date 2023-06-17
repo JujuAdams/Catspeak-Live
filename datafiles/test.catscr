@@ -1,1 +1,1 @@
-draw_text(10, 200, string("!"))
+draw_text(10, 200, string("hello!"))

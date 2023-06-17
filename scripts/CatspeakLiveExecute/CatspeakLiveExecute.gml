@@ -1,6 +1,15 @@
+/// Tries to execute a Catspeak source file with the given name
+/// 
+/// @param sourceName
+
 function CatspeakLiveExecute(_name)
 {
     static __global = __CatspeakLiveGlobal();
+    
+    if (__global.__environment == undefined)
+    {
+        __CatspeakLiveError("Must call CatspeakLiveSetEnvironment() first");
+    }
     
     if (not CatspeakLiveCompiled(_name, true))
     {

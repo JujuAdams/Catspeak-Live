@@ -1,6 +1,13 @@
-function __CatspeakScan()
+/// Forces a scan of the datafiles folder
+
+function CatspeakLiveForceScan()
 {
     static __global = __CatspeakLiveGlobal();
+    
+    if (__global.__environment == undefined)
+    {
+        __CatspeakLiveError("Must call CatspeakLiveSetEnvironment() first");
+    }
     
     var _newArray = __CatspeakLiveGumshoe(__CatspeakLiveDatafilesDirectory(), CATSPEAK_LIVE_SOURCE_EXTENSION, false, false, undefined, true);
     

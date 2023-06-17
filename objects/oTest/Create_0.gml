@@ -5,3 +5,5 @@ Catspeak.addFunction(
     "mouse_get_x", function () { return mouse_x },
     "mouse_get_y", function () { return mouse_y },
 );
+
+CatspeakLiveSetEnvironment(Catspeak);
