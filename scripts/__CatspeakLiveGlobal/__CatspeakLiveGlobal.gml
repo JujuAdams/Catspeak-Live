@@ -1,10 +1,17 @@
 function __CatspeakLiveGlobal()
 {
-    static _struct = {
-        __fileArray: [],
-        __fileWatcherStruct: {},
-        __environment: CATSPEAK_LIVE_USE_DEFAULT_ENVIRONMENT? Catspeak : (new CatspeakEnvironment()),
-    };
+    static _struct = undefined;
+    
+    if (_struct == undefined)
+    {
+        catspeak_force_init();
+        
+        _struct = {
+            __fileArray: [],
+            __fileWatcherStruct: {},
+            __environment: Catspeak,
+        };
+    }
     
     return _struct;
 }
