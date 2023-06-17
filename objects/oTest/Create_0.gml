@@ -1,4 +1,4 @@
-CatspeakLiveGetEnvironment().addFunction(
+Catspeak.addFunction(
     "string", string,
     "draw_text", draw_text,
     "draw_circle", draw_circle,
