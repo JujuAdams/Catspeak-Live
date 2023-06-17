@@ -4,7 +4,7 @@ function CatspeakLiveChanged(_name)
     
     if (not CatspeakLiveExists(_name))
     {
-        if (not CATSPEAK_LIVE_FAIL_QUIETLY) __CatspeakLiveError("File \"", _name, "\" not found");
+        if (not CATSPEAK_LIVE_QUIET_ERRORS) __CatspeakLiveError("File \"", _name, "\" not found");
         return false;
     }
     
