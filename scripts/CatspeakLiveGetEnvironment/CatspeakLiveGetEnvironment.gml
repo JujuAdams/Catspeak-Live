@@ -1,4 +1,4 @@
-function CatspeakLiveGetEnvironment(_environment)
+function CatspeakLiveGetEnvironment()
 {
     static __global = __CatspeakLiveGlobal();
     
