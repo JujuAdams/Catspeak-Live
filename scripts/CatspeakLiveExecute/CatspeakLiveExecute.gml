@@ -2,9 +2,9 @@ function CatspeakLiveExecute(_name)
 {
     static __global = __CatspeakLiveGlobal();
     
-    if (not CatspeakLiveExists(_name))
+    if (not CatspeakLiveCompiled(_name, true))
     {
-        if (not CATSPEAK_LIVE_FAIL_QUIETLY) __CatspeakLiveError("File \"", _name, "\" not found");
+        if (not CATSPEAK_LIVE_QUIET_ERRORS) __CatspeakLiveError("File \"", _name, "\" has not been compiled successfully");
         return undefined;
     }
     
