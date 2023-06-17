@@ -1,11 +1,11 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "scr_catspeak_alloc",
+  "name": "__CatspeakScan",
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Catspeak",
-    "path": "folders/Catspeak LTS Conversion/Catspeak.yy",
+    "name": "(System)",
+    "path": "folders/Catspeak Live/(System).yy",
   },
 }

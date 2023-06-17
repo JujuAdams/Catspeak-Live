@@ -5,7 +5,7 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "catspeak-live",
-    "path": "catspeak-live.yyp",
+    "name": "Catspeak LTS Conversion",
+    "path": "folders/Catspeak LTS Conversion.yy",
   },
 }

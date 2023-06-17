@@ -6,6 +6,6 @@
   "isCompatibility": false,
   "parent": {
     "name": "Catspeak",
-    "path": "folders/Catspeak.yy",
+    "path": "folders/Catspeak LTS Conversion/Catspeak.yy",
   },
 }
