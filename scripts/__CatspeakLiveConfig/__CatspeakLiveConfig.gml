@@ -7,5 +7,5 @@
 #macro CATSPEAK_LIVE_QUIET_ERRORS  false
 
 //Whether to automatically scan for changes when running from the IDE
-//If you set this to <false> then you'll need to call CatspeakLiveForceScan() yourself
-#macro CATSPEAK_LIVE_AUTOSCAN_WHEN_RUNNING_FROM_IDE  true
+//Set this macro to <false> to test behaviour in production (and also for a speed boost)
+#macro CATSPEAK_LIVE_AUTO_UPDATE_WHEN_RUNNING_FROM_IDE  true

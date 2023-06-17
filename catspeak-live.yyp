@@ -6,7 +6,7 @@
     {"id":{"name":"CatspeakLiveExists","path":"scripts/CatspeakLiveExists/CatspeakLiveExists.yy",},"order":4,},
     {"id":{"name":"__CatspeakLiveGetPath","path":"scripts/__CatspeakLiveGetPath/__CatspeakLiveGetPath.yy",},"order":7,},
     {"id":{"name":"scr_catspeak_sanity","path":"scripts/scr_catspeak_sanity/scr_catspeak_sanity.yy",},"order":0,},
-    {"id":{"name":"CatspeakLiveForceScan","path":"scripts/CatspeakLiveForceScan/CatspeakLiveForceScan.yy",},"order":7,},
+    {"id":{"name":"CatspeakLiveForceUpdate","path":"scripts/CatspeakLiveForceUpdate/CatspeakLiveForceUpdate.yy",},"order":7,},
     {"id":{"name":"scr_catspeak_codegen","path":"scripts/scr_catspeak_codegen/scr_catspeak_codegen.yy",},"order":9,},
     {"id":{"name":"__CatspeakLiveGlobal","path":"scripts/__CatspeakLiveGlobal/__CatspeakLiveGlobal.yy",},"order":3,},
     {"id":{"name":"array_map","path":"scripts/array_map/array_map.yy",},"order":1,},

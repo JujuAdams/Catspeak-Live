@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "CatspeakLiveForceScan",
+  "name": "CatspeakLiveForceUpdate",
   "isDnD": false,
   "isCompatibility": false,
   "parent": {

@@ -1,6 +1,12 @@
 /// Forces a scan of the datafiles folder
+/// 
+/// Any files that have found to have changed, or have been newly added, will be recompiled
+/// immediately, making them ready for use
+/// 
+/// If you're running from the IDE and have CATSPEAK_LIVE_AUTO_UPDATE_WHEN_RUNNING_FROM_IDE set
+/// to <true> then you won't need to call this function
 
-function CatspeakLiveForceScan()
+function CatspeakLiveForceUpdate()
 {
     static __global = __CatspeakLiveGlobal();
     

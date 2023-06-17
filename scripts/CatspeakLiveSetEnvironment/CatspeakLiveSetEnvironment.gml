@@ -3,6 +3,9 @@
 /// 
 ///     CatspeakLiveSetEnvironment(Catspeak);
 /// 
+/// If the forceScan argument is set to <true> then this function will also trigger a recompile
+/// of all Catspeak source files
+/// 
 /// N.B. Catspeak Live won't work until this function is called!
 /// 
 /// @param environment
@@ -26,15 +29,15 @@ function CatspeakLiveSetEnvironment(_environment, _forceScan = true)
                 //Expose Catspeak Live state for inspection
                 if (debug_mode) global.catspeakLive = __CatspeakLiveGlobal();
                 
-                if (CATSPEAK_LIVE_AUTOSCAN_WHEN_RUNNING_FROM_IDE)
+                if (CATSPEAK_LIVE_AUTO_UPDATE_WHEN_RUNNING_FROM_IDE)
                 {
                     //Start a per-frame scan
                     __global.__autoScan = true;
-                    time_source_start(time_source_create(time_source_global, 1, time_source_units_frames, CatspeakLiveForceScan, [], -1));
+                    time_source_start(time_source_create(time_source_global, 1, time_source_units_frames, CatspeakLiveForceUpdate, [], -1));
                 }
             }
             
-            if (_forceScan) CatspeakLiveForceScan();
+            if (_forceScan) CatspeakLiveForceUpdate();
         }
     }
 }
