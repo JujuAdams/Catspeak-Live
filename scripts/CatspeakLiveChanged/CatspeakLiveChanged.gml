@@ -13,9 +13,9 @@ function CatspeakLiveChanged(_name)
     
     if (not CatspeakLiveExists(_name))
     {
-        if (not CATSPEAK_LIVE_QUIET_ERRORS) __CatspeakLiveError("File \"", _name, "\" not found");
+        if (not CATSPEAK_LIVE_QUIET_ERRORS) __CatspeakLiveError("Source file \"", _name, "\" not found");
         return false;
     }
     
-    return __global.__fileWatcherStruct[$ __CatspeakLiveGetPath(_name)].__IsChanged();
+    return __global.__fileWatcherStruct[$ _name].__IsChanged();
 }

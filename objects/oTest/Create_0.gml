@@ -1,4 +1,5 @@
 Catspeak.addFunction(
+    "log", show_debug_message,
     "string", string,
     "draw_text", draw_text,
     "draw_circle", draw_circle,

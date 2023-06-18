@@ -12,5 +12,5 @@ function CatspeakLiveExists(_name)
         __CatspeakLiveError("Must call CatspeakLiveSetEnvironment() first");
     }
     
-    return variable_struct_exists(__global.__fileWatcherStruct, __CatspeakLiveGetPath(_name));
+    return variable_struct_exists(__global.__fileWatcherStruct, _name);
 }

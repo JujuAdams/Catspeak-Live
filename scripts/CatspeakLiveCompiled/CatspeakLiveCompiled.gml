@@ -14,5 +14,5 @@ function CatspeakLiveCompiled(_name)
     
     if (not CatspeakLiveExists(_name)) return false;
     
-    return __global.__fileWatcherStruct[$ __CatspeakLiveGetPath(_name)].__compileSuccess;
+    return __global.__fileWatcherStruct[$ _name].__compileSuccess;
 }

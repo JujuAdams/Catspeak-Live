@@ -1,8 +1,9 @@
-function __CatspeakLiveClassFileWatcher(_filename) constructor
+function __CatspeakLiveClassFileWatcher(_name) constructor
 {
     static __global = __CatspeakLiveGlobal();
     
-    __filename = _filename;
+    __name     = _name;
+    __filename = __CatspeakLiveGetPath(__name);
     
     __hash    = undefined;
     __changed = true;

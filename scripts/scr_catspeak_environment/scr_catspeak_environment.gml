@@ -86,6 +86,15 @@ function CatspeakEnvironment() constructor {
             interface_[$ name] = func;
         }
     };
+    
+    static removeFunction = function () {
+        if (!is_struct(interface)) return;
+        
+        var interface_ = interface;
+        for (var i = 0; i < argument_count; i += 1) {
+            variable_struct_remove(interface_, argument[i]);
+        }
+    };
 
     /// Used to add a new constant to this environment.
     ///

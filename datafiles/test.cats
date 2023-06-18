@@ -1,1 +1,2 @@
-draw_text(10, 200, string("hello!"))
+draw_text(10, 190, string("hello!"))
+test2().main()

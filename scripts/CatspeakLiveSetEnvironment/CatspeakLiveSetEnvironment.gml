@@ -20,6 +20,19 @@ function CatspeakLiveSetEnvironment(_environment, _forceScan = true)
         var _oldEnvironment = __global.__environment;
         __global.__environment = _environment;
         
+        if (CATSPEAK_LIVE_ADD_CL_FUNCTIONS_TO_ENVIRONMENT)
+        {
+            //Add Catspeak Live functions to the environment
+            _environment.addFunction("CatspeakLiveExecute",  CatspeakLiveExecute,
+                                     "CatspeakLiveExists",   CatspeakLiveExists,
+                                     "CatspeakLiveCompiled", CatspeakLiveCompiled,
+                                     "CatspeakLiveChanged",  CatspeakLiveChanged,
+                                     "CLExec",               CLExec,
+                                     "CLExists",             CLExists,
+                                     "CLCompiled",           CLCompiled,
+                                     "CLChanged",            CLChanged);
+        }
+        
         if (_oldEnvironment == undefined) __CatspeakLiveInit(_forceScan);
     }
 }
